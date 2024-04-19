@@ -1,0 +1,6 @@
+@Jaaq.Player.Api_HostAddress = http://localhost:5063
+
+GET {{Jaaq.Player.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
