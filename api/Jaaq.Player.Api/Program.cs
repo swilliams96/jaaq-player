@@ -1,3 +1,5 @@
+using Jaaq.Player.Api.Repositories;
+using Jaaq.Player.Api.Repositories.Interfaces;
 
 namespace Jaaq.Player.Api
 {
@@ -13,6 +15,9 @@ namespace Jaaq.Player.Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddSingleton<IUserRepository, InMemoryUserRepository>();
+            builder.Services.AddSingleton<IVideoRepository, InMemoryVideoRepository>();
 
             var app = builder.Build();
 
