@@ -1,0 +1,4 @@
+.heart-button.liked path  {
+  fill: #E81A6E;
+  transition: fill 0.1s;
+}
