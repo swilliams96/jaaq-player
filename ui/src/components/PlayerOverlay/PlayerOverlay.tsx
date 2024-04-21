@@ -5,16 +5,17 @@ import Video from "../../models/Video";
 
 interface PlayerOverlayProps {
   activeVideo?: Video;
+  setLiked: (liked: boolean) => void;
 }
 
-export const PlayerOverlay = ({ activeVideo } : PlayerOverlayProps) => {
+export const PlayerOverlay = ({ activeVideo, setLiked }: PlayerOverlayProps) => {
   return (
     <div className="player-overlay">
       <div>
         <img className="logo" src="logo.png" />
       </div>
       <div>
-        <PlayerControls />
+        <PlayerControls liked={activeVideo?.liked ?? false} setLiked={setLiked} />
         <PlayerDetails activeVideo={activeVideo} />
       </div>
     </div>

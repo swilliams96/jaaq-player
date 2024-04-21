@@ -1,9 +1,10 @@
 import "./Player.css";
-import { TouchEventHandler, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { PlayerOverlay } from "../PlayerOverlay/PlayerOverlay";
 import { PlayerVideo } from "../PlayerVideo/PlayerVideo";
 import Video from "../../models/Video";
 import { fetchVideo } from "../../services/VideoService";
+import { useDoubleTap } from "use-double-tap";
 
 const minSwipeDistance = 60;
 
@@ -12,6 +13,7 @@ export const Player = () => {
   const [activeVideoIndex, setActiveVideoIndex] = useState<number>(0);
   const [touchStartY, setTouchStartY] = useState(null);
   const [touchEndY, setTouchEndY] = useState(null);
+  const doubleTapToLikeBind = useDoubleTap((event) => setCurrentVideoLiked(true));
 
   const onTouchStart = (e: any) => {
     setTouchEndY(null);
@@ -42,6 +44,12 @@ export const Player = () => {
 
   const onTouchMove = (e: any) => setTouchEndY(e.targetTouches[0].clientY);
 
+  const setCurrentVideoLiked = (liked: boolean) => {
+    if (!activeVideo) return;
+    activeVideo.liked = liked;
+    setVideos(videos);
+  };
+
   useEffect(() => {
     (async () => {
       let initialVideos = [
@@ -56,9 +64,9 @@ export const Player = () => {
   let activeVideo = videos[activeVideoIndex];
 
   return (
-    <div className="player" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd} onTouchMove={onTouchMove}>
+    <div className="player" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd} onTouchMove={onTouchMove} {...doubleTapToLikeBind}>
       <PlayerVideo video={activeVideo} />
-      <PlayerOverlay activeVideo={activeVideo} />
+      <PlayerOverlay activeVideo={activeVideo} setLiked={setCurrentVideoLiked} />
     </div>
   );
 };
