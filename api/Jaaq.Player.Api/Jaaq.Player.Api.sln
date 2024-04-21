@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jaaq.Player.Api", "Jaaq.Player.Api.csproj", "{C64486B1-6485-43A0-8A25-DAC5B23C0FD5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jaaq.Player.UnitTests", "..\Jaaq.Player.UnitTests\Jaaq.Player.UnitTests.csproj", "{BC956E3B-368A-4D2B-9DB9-B6E891D04EE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C64486B1-6485-43A0-8A25-DAC5B23C0FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C64486B1-6485-43A0-8A25-DAC5B23C0FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C64486B1-6485-43A0-8A25-DAC5B23C0FD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC956E3B-368A-4D2B-9DB9-B6E891D04EE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC956E3B-368A-4D2B-9DB9-B6E891D04EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC956E3B-368A-4D2B-9DB9-B6E891D04EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC956E3B-368A-4D2B-9DB9-B6E891D04EE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
