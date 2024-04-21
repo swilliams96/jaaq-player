@@ -1,16 +1,19 @@
 import "./PlayerDetails.css";
 import { PlayerControls } from "../PlayerControls/PlayerControls";
+import Video from "../../models/Video";
 
-export const PlayerDetails = () => {
+interface PlayerDetailsProps {
+  activeVideo?: Video;
+}
+
+export const PlayerDetails = ({ activeVideo }: PlayerDetailsProps) => {
   return (
     <>
       <div className="details">
         <div className="details-content">
-          <p className="title">Hot Drinks</p>
-          <p className="description">
-            Have a hot drink and relax, though be careful not to have too much caffeine 😖
-          </p>
-          <p className="poster">by <a>@swilliams96</a></p>
+          <p className="title">{activeVideo?.title}</p>
+          <p className="description">{activeVideo?.description}</p>
+          <p className="poster">by <a>@{activeVideo?.postedBy}</a></p>
         </div>
       </div>
     </>

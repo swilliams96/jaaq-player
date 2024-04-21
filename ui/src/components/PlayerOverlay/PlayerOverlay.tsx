@@ -1,24 +1,22 @@
+import "./PlayerOverlay.css";
 import { PlayerControls } from "../PlayerControls/PlayerControls";
 import { PlayerDetails } from "../PlayerDetails/PlayerDetails";
-import "./PlayerOverlay.css";
+import Video from "../../models/Video";
 
-export const PlayerOverlay = () => {
+interface PlayerOverlayProps {
+  activeVideo?: Video;
+}
+
+export const PlayerOverlay = ({ activeVideo } : PlayerOverlayProps) => {
   return (
-    // <div style={{ position: 'absolute', display: 'flex', alignItems: 'center', alignContent: 'center', height: '100%', width: '100%' }}>
     <div className="player-overlay">
       <div>
         <img className="logo" src="logo.png" />
       </div>
       <div>
         <PlayerControls />
-        <PlayerDetails />
+        <PlayerDetails activeVideo={activeVideo} />
       </div>
     </div>
-    // <div className="player-overlay">
-    //   <div style={{ backgroundColor: 'blue' }}>test</div>
-    //   <div>
-    //     <img className='logo' src="logo.png" />
-    //   </div>
-    // </div>
   );
 };

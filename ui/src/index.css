@@ -13,3 +13,7 @@ a {
   color: #24F68C;
 	font-weight: 700;
 }
+
+a:hover {
+	cursor: pointer;
+}
