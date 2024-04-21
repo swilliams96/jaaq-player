@@ -32,5 +32,7 @@ Once it's up and running you can use the following button in Chrome to view the 
 ### Frontend
 - The liking of videos is a bit clunky right now due to the simplisticness of the implementation - given the video state is modified from a number of different components it would be a good use case for Redux or something similar.
 - Liking a video is purely local and is not persisted - this should really be an API call that is stored against your user in the database.
+- It is also only against the instance of the video (not against the video by its ID) which means that when the video shows up again it is not liked if it was previously. If I had more time I would've perfected this to track the liked videos by ID and used this instead of the index of the video in the list.
 - Comments and sharing is not implemented.
 - Failure handling (e.g. networking issues, etc.) are not handled currently but would be ideally implemented with an error bubble alert.
+- Scrolling UX could be improved by rendering multiple videos and allowing scrolling between them with CSS "scroll snapping" to mimic TikTok/Instagram Reels.
