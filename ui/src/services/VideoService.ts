@@ -1,7 +1,7 @@
 import axios from "axios";
 import Video, { VideoDto } from "../models/Video";
 
-const API_BASE_URL = 'https://localhost:7076';
+const API_BASE_URL = 'http://localhost:5063';
 
 export async function fetchVideo(): Promise<Video> {
   var result = await axios.get<VideoDto>(`${API_BASE_URL}/videos/random`);
