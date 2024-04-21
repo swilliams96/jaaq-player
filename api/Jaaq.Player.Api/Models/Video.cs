@@ -5,6 +5,6 @@
         string Title,
         string Description,
         string LocationUrl,
-        Guid PostedBy,
+        string PostedBy,
         DateTime PostedAt);
 }

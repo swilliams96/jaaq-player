@@ -26,12 +26,13 @@ namespace Jaaq.Player.Api
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+
+                app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             }
 
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
